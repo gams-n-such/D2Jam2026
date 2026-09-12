@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PgSurfaceResource" format=3 uid="uid://brb75q6ctrdrb"]
+
+[ext_resource type="Script" uid="uid://dm2lky4c0q381" path="res://Game/Level/Surfaces/pg_surface_res.gd" id="1_fwveg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65o2u"]
+albedo_color = Color(0.03, 0.03, 0.03, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rh10f"]
+friction = 0.9
+rough = true
+bounce = 0.8
+
+[resource]
+script = ExtResource("1_fwveg")
+material = SubResource("StandardMaterial3D_65o2u")
+phys_material = SubResource("PhysicsMaterial_rh10f")
+metadata/_custom_type_script = "uid://dm2lky4c0q381"
