@@ -44,7 +44,7 @@ func add_camera_input(input : Vector2) -> void:
 		pcam.set_third_person_rotation_degrees(pcam_rotation_degrees)
 
 @export var jump_impulse : float = 10.0
-@export var rotation_input_force : float = 25.0
+@export var rotation_input_force : float = 30.0
 @export var mouse_camera_sensitivity : float = 0.05
 @export var gamepad_camera_sensitivity : float = 1.0
 @export var turn_force : float = 100.0
@@ -55,7 +55,6 @@ func _physics_process(delta: float) -> void:
 	if input_dir.length_squared() > 0.01 or turn_input != 0.0:
 		var input_torque := Vector3(input_dir.y, 0.0, -input_dir.x) * rotation_input_force + Vector3.UP * turn_force * turn_input
 		input_torque = global_basis * input_torque
-		print(input_dir, input_torque)
 		apply_torque(input_torque)
 
 #func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
