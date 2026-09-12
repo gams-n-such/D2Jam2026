@@ -119,12 +119,8 @@ shape = SubResource("CapsuleShape3D_tp06f")
 visible = false
 mesh = SubResource("CapsuleMesh_tp06f")
 
-[node name="BodyCollision2" type="CollisionShape3D" parent="." unique_id=1527528049]
+[node name="HornCollision" type="CollisionShape3D" parent="." unique_id=1527528049]
 transform = Transform3D(1, 0, 0, 0, 0.94796145, 0.31838512, 0, -0.31838512, 0.94796145, -0.05255127, 1.0524206, 1.00441)
 shape = SubResource("BoxShape3D_ibbhq")
-
-[node name="BodyMesh" type="MeshInstance3D" parent="BodyCollision2" unique_id=2005702968]
-visible = false
-mesh = SubResource("CapsuleMesh_tp06f")
 
 [connection signal="body_entered" from="StickCollision/StickEnd" to="." method="_on_stick_end_body_entered"]
