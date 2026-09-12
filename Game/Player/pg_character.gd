@@ -19,7 +19,8 @@ var _mouse_input : Vector2 = Vector2.ZERO
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		Game.open_pause_menu()
-	elif event.is_action_pressed("jump"):
+		return
+	if event.is_action_pressed("jump"):
 		if stick_floor_ray_cast.is_colliding():
 			var impulse := global_basis * Vector3.UP * jump_impulse
 			apply_impulse(impulse, stick_floor_ray_cast.global_position - global_position)
@@ -28,8 +29,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		var move := (event as InputEventMouseMotion).relative
 		#_mouse_input += move.relative
 		if move.length_squared() > 0.01:
-			var impulse := global_basis * Vector3.UP * move.x * turn_sensitivity * -1.0
-			apply_torque_impulse(impulse)
+			#var impulse := global_basis * Vector3.UP * move.x * turn_sensitivity * -1.0
+			#apply_torque_impulse(impulse)
 			var pcam_rotation_degrees: Vector3
 			pcam_rotation_degrees = pcam.get_third_person_rotation_degrees()
 			pcam_rotation_degrees.x -= move.y * turn_sensitivity
@@ -41,11 +42,13 @@ func _unhandled_input(event: InputEvent) -> void:
 @export var jump_impulse : float = 10.0
 @export var rotation_input_force : float = 25.0
 @export var turn_sensitivity : float = 0.05
+@export var turn_force : float = 100.0
 
 func _physics_process(delta: float) -> void:
 	var input_dir := JamUtils.get_move_input_dir_2d()
-	if input_dir.length_squared() > 0.01:
-		var input_torque := Vector3(input_dir.y, 0.0, -input_dir.x) * rotation_input_force
+	var turn_input := Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
+	if input_dir.length_squared() > 0.01 or turn_input != 0.0:
+		var input_torque := Vector3(input_dir.y, 0.0, -input_dir.x) * rotation_input_force + Vector3.UP * turn_force * turn_input
 		input_torque = global_basis * input_torque
 		print(input_dir, input_torque)
 		apply_torque(input_torque)
