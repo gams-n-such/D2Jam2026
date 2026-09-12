@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	var camera_input := JamUtils.get_camera_input_dir()
 	add_camera_input(camera_input * gamepad_camera_sensitivity)
 
-@onready var stick_floor_ray_cast: RayCast3D = %StickFloorRayCast
+@onready var stick_floor_shape_cast: ShapeCast3D = %StickFloorShapeCast
 @onready var pcam: PhantomCamera3D = %PhantomCamera3D
 
 var _mouse_input : Vector2 = Vector2.ZERO
@@ -22,13 +22,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		Game.open_pause_menu()
 		return
 	if event.is_action_pressed("jump"):
-		if stick_floor_ray_cast.is_colliding():
+		if stick_floor_shape_cast.is_colliding():
 			var impulse := global_basis * Vector3.UP * jump_impulse
-			apply_impulse(impulse, stick_floor_ray_cast.global_position - global_position)
+			apply_impulse(impulse, stick_floor_shape_cast.global_position - global_position)
 			print(jump_impulse)
 	if event is InputEventMouseMotion:
 		var move := (event as InputEventMouseMotion).relative
-		#_mouse_input += move.relative
 		add_camera_input(move * mouse_camera_sensitivity)
 
 func add_camera_input(input : Vector2) -> void:
@@ -56,9 +55,6 @@ func _physics_process(delta: float) -> void:
 		var input_torque := Vector3(input_dir.y, 0.0, -input_dir.x) * rotation_input_force + Vector3.UP * turn_force * turn_input
 		input_torque = global_basis * input_torque
 		apply_torque(input_torque)
-
-#func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
-	#pass
 
 func _on_stick_end_body_entered(body: Node) -> void:
 	pass # Replace with function body.
