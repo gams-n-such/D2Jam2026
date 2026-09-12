@@ -3,13 +3,18 @@
 [ext_resource type="PhysicsMaterial" uid="uid://bub1sudm6smya" path="res://Game/Player/PHM_PlayerBody.tres" id="1_4720i"]
 [ext_resource type="Script" uid="uid://dgsag5rvae4c4" path="res://Game/Player/pg_character.gd" id="2_axqh2"]
 [ext_resource type="PhysicsMaterial" uid="uid://pkwdbk3u8h1x" path="res://Game/Player/PHM_StickEnd.tres" id="2_kddtl"]
+[ext_resource type="PackedScene" uid="uid://b3a5wu3ebja6t" path="res://Game/Player/GOATPogoStick.fbx" id="3_up434"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_beva2"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_up434"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_3gpkf"]
+[ext_resource type="PackedScene" uid="uid://dk70vpa1bu7af" path="res://Game/Player/GOAT.fbx" id="8_3gpkf"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_beva2"]
-radius = 0.08
-height = 1.9
+[sub_resource type="Resource" id="Resource_t7efi"]
+script = ExtResource("6_3gpkf")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ik4tp"]
+height = 2.71875
+radius = 0.16796875
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tp06f"]
 radius = 0.1
@@ -28,15 +33,14 @@ top_radius = 0.08
 bottom_radius = 0.08
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tp06f"]
-radius = 0.4
+radius = 0.67626953
+height = 2.7128906
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tp06f"]
 radius = 0.4
 
-[sub_resource type="Resource" id="Resource_t7efi"]
-script = ExtResource("6_3gpkf")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tp06f"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ibbhq"]
+size = Vector3(1.1741943, 1.1858826, 1.2397461)
 
 [node name="PgCharacter" type="RigidBody3D" unique_id=250950987]
 collision_layer = 2
@@ -46,9 +50,40 @@ inertia = Vector3(2, 2, 2)
 angular_damp = 7.0
 script = ExtResource("2_axqh2")
 
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=1331924658 node_paths=PackedStringArray("follow_target")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+script = ExtResource("5_up434")
+follow_mode = 6
+follow_target = NodePath("..")
+tween_resource = SubResource("Resource_t7efi")
+follow_distance = 5.0
+spring_length = 5.0
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+align_rotation_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2069540689]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=129337912]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("4_beva2")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
 [node name="StickCollision" type="CollisionShape3D" parent="." unique_id=25304802]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-shape = SubResource("CapsuleShape3D_beva2")
+shape = SubResource("CylinderShape3D_ik4tp")
+
+[node name="GOATPogoStick" parent="StickCollision" unique_id=1779923468 instance=ExtResource("3_up434")]
+transform = Transform3D(1, 0, 0, 0, 0.9845645, 0.17502277, 0, -0.17502277, 0.9845645, 0.0012364388, -0.31273293, -0.4043136)
+
+[node name="GOAT" parent="StickCollision/GOATPogoStick" unique_id=1171572663 instance=ExtResource("8_3gpkf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 3.2013578e-08, 0.93053895, 0.36619264, -8.13503e-08, 0.36619264, -0.93053895, -0.010122418, -0.08746648, 0.61701316)
 
 [node name="StickEnd" type="RigidBody3D" parent="StickCollision" unique_id=383208704]
 process_mode = 4
@@ -67,48 +102,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.019851685, 0)
 mesh = SubResource("CylinderMesh_biaub")
 
 [node name="StickMesh" type="MeshInstance3D" parent="StickCollision" unique_id=1094000541]
+visible = false
 mesh = SubResource("CylinderMesh_tp06f")
 
 [node name="StickFloorRayCast" type="RayCast3D" parent="StickCollision" unique_id=890001861]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
-target_position = Vector3(0, -0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 0)
+target_position = Vector3(0, -0.4, 0)
 hit_from_inside = true
 
 [node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=283694854]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.036714554, 0.15846843)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21105546, 0.41011387)
 shape = SubResource("CapsuleShape3D_tp06f")
 
 [node name="BodyMesh" type="MeshInstance3D" parent="BodyCollision" unique_id=374946632]
+visible = false
 mesh = SubResource("CapsuleMesh_tp06f")
 
-[node name="Camera3D" type="Camera3D" parent="BodyCollision" unique_id=2069540689]
-physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-top_level = true
+[node name="BodyCollision2" type="CollisionShape3D" parent="." unique_id=1527528049]
+transform = Transform3D(1, 0, 0, 0, 0.94796145, 0.31838512, 0, -0.31838512, 0.94796145, -0.05255127, 1.0524206, 1.00441)
+shape = SubResource("BoxShape3D_ibbhq")
 
-[node name="PhantomCameraHost" type="Node" parent="BodyCollision/Camera3D" unique_id=129337912]
-process_priority = 300
-process_physics_priority = 300
-script = ExtResource("4_beva2")
-metadata/_custom_type_script = "uid://bd046eokvcnu2"
-
-[node name="PhantomCamera3D" type="Node3D" parent="BodyCollision" unique_id=1331924658 node_paths=PackedStringArray("follow_target")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036714554, 2.8415315)
-script = ExtResource("5_up434")
-follow_mode = 6
-follow_target = NodePath("../..")
-tween_resource = SubResource("Resource_t7efi")
-follow_distance = 3.0
-spring_length = 3.0
-align_transform_with_view = Callable()
-align_position_with_view = Callable()
-align_rotation_with_view = Callable()
-metadata/_custom_type_script = "uid://csjccrhj5wnx7"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=603180062]
-shape = SubResource("BoxShape3D_tp06f")
-disabled = true
+[node name="BodyMesh" type="MeshInstance3D" parent="BodyCollision2" unique_id=2005702968]
+visible = false
+mesh = SubResource("CapsuleMesh_tp06f")
 
 [connection signal="body_entered" from="StickCollision/StickEnd" to="." method="_on_stick_end_body_entered"]
