@@ -6,9 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bc7t0l0n2v1lu" path="res://Gameplay3D/Triggers/player_trigger_sphere.tscn" id="7_4ksgo"]
 [ext_resource type="PackedScene" uid="uid://vfhedaqupk13" path="res://Gameplay3D/Labels/node_name_3d.tscn" id="8_4ksgo"]
 [ext_resource type="PackedScene" uid="uid://dv7jl7xhxqf5h" path="res://Gameplay3D/Interactions/test_interactable_3d.tscn" id="9_tphcg"]
+[ext_resource type="PackedScene" uid="uid://vfm21c4ma5tg" path="res://Game/Level/Stones/pg_stone_3.tscn" id="10_4jmrd"]
 [ext_resource type="PackedScene" uid="uid://ca3h660m4iob6" path="res://Gameplay3D/Interactions/interaction_sphere.tscn" id="10_y2tcx"]
 [ext_resource type="PackedScene" uid="uid://d2l25wotvmh1x" path="res://Gameplay3D/Door/test_door_3d.tscn" id="11_7eh12"]
+[ext_resource type="Script" uid="uid://cukh3ujxt50de" path="res://Game/Level/Stones/pg_stone.gd" id="11_t2aj3"]
 [ext_resource type="PackedScene" uid="uid://brsy8we6ltm34" path="res://Game/Player/pg_character.tscn" id="12_dfghf"]
+[ext_resource type="PackedScene" uid="uid://cs6i4lkdg3mh2" path="res://Game/Level/Stones/pg_stone_2.tscn" id="12_k6ulc"]
+[ext_resource type="PackedScene" uid="uid://blrocbhrbvaym" path="res://Game/Level/Stones/pg_stone_1.tscn" id="13_bm13g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fktsr"]
 sky_top_color = Color(0.23538089, 0.5855123, 0.7892152, 1)
@@ -85,61 +89,6 @@ size = Vector3(20, 3, 1)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 18, 1.5, 10)
 size = Vector3(20, 3, 1)
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="BlockoutRoot" unique_id=374066847]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0.5, -21)
-use_collision = true
-mesh = SubResource("PrismMesh_tp06f")
-
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="BlockoutRoot" unique_id=588169027]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17, 1, -21)
-use_collision = true
-mesh = SubResource("PrismMesh_di6ob")
-
-[node name="CSGMesh3D3" type="CSGMesh3D" parent="BlockoutRoot" unique_id=2062257136]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12, 1.5, -21)
-use_collision = true
-mesh = SubResource("PrismMesh_l8ivj")
-
-[node name="CSGMesh3D4" type="CSGMesh3D" parent="BlockoutRoot" unique_id=2109281191]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7, 2, -21)
-use_collision = true
-mesh = SubResource("PrismMesh_7eh12")
-
-[node name="CSGMesh3D5" type="CSGMesh3D" parent="BlockoutRoot" unique_id=46203935]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 4, -21)
-use_collision = true
-mesh = SubResource("PrismMesh_dfghf")
-
-[node name="CSGMesh3D10" type="CSGMesh3D" parent="BlockoutRoot" unique_id=1925060723]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 3, -21)
-use_collision = true
-mesh = SubResource("PrismMesh_4jmrd")
-
-[node name="CSGMesh3D9" type="CSGMesh3D" parent="BlockoutRoot" unique_id=42144670]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 5, -21)
-use_collision = true
-mesh = SubResource("PrismMesh_t2aj3")
-
-[node name="CSGMesh3D6" type="CSGMesh3D" parent="BlockoutRoot" unique_id=637208838]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13, 6, -21)
-use_collision = true
-mesh = SubResource("PrismMesh_k6ulc")
-
-[node name="CSGMesh3D8" type="CSGMesh3D" parent="BlockoutRoot" unique_id=483972046]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18, 7, -21)
-use_collision = true
-mesh = SubResource("PrismMesh_bm13g")
-
-[node name="CSGMesh3D7" type="CSGMesh3D" parent="BlockoutRoot" unique_id=1308216119]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23, 8, -21)
-use_collision = true
-mesh = SubResource("PrismMesh_x4ihm")
-
-[node name="CSGMesh3D11" type="CSGMesh3D" parent="BlockoutRoot" unique_id=1545836814]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28, 10, -21)
-use_collision = true
-mesh = SubResource("PrismMesh_g3g77")
-
 [node name="PlayerTriggerTest" parent="." unique_id=445491241 instance=ExtResource("9_tphcg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7698026, 1.752475, 19.004707)
 
@@ -174,5 +123,339 @@ text = "Door3D"
 
 [node name="PgCharacter" parent="." unique_id=250950987 instance=ExtResource("12_dfghf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3208642, 2.853115, -5.0462723)
+
+[node name="Slopes" type="Node3D" parent="." unique_id=392185360]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Slopes" unique_id=374066847]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0.5, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_tp06f")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Slopes" unique_id=588169027]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17, 1, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_di6ob")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Slopes" unique_id=2062257136]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12, 1.5, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_l8ivj")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="Slopes" unique_id=2109281191]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7, 2, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_7eh12")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="Slopes" unique_id=46203935]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 4, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_dfghf")
+
+[node name="CSGMesh3D10" type="CSGMesh3D" parent="Slopes" unique_id=1925060723]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 3, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_4jmrd")
+
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="Slopes" unique_id=42144670]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 5, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_t2aj3")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="Slopes" unique_id=637208838]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13, 6, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_k6ulc")
+
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="Slopes" unique_id=483972046]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18, 7, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_bm13g")
+
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="Slopes" unique_id=1308216119]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23, 8, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_x4ihm")
+
+[node name="CSGMesh3D11" type="CSGMesh3D" parent="Slopes" unique_id=1545836814]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28, 10, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_g3g77")
+
+[node name="Stones" type="Node3D" parent="." unique_id=788306934]
+
+[node name="PgStone" type="StaticBody3D" parent="Stones" unique_id=1971995097 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7354085, 3.645771, -15.557215)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (1)" type="StaticBody3D" parent="Stones" unique_id=332506510 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.627142, 2.2056456, -12.8380375)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (2)" type="StaticBody3D" parent="Stones" unique_id=1047366024 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.823235, 7.7063427, -15.816465)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (3)" type="StaticBody3D" parent="Stones" unique_id=1642322576 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.846752, 13.121273, -17.560638)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (4)" type="StaticBody3D" parent="Stones" unique_id=1569579473 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.066125, 1.7438698, -15.35968)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (5)" type="StaticBody3D" parent="Stones" unique_id=1304750888 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6543832, 5.063219, -19.438704)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (6)" type="StaticBody3D" parent="Stones" unique_id=1821285792 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.333305, 8.756372, -18.296976)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (7)" type="StaticBody3D" parent="Stones" unique_id=951440755 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(0.16348663, 0, 0.9271776, 0, 0.9414803, 0, -0.9271776, 0, 0.16348663, 7.424841, 6.293274, -17.293272)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (8)" type="StaticBody3D" parent="Stones" unique_id=392328840 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(0.16348653, 0, 0.9271774, 0, 0.9414803, 0, -0.9271774, 0, 0.16348653, -9.971554, 2.2719364, -18.573118)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (9)" type="StaticBody3D" parent="Stones" unique_id=164140406 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(0.16348653, 0, 0.9271774, 0, 0.9414803, 0, -0.9271774, 0, 0.16348653, -1.6264791, 1.2198181, -13.033033)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (10)" type="StaticBody3D" parent="Stones" unique_id=2120290285 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(0.16348653, 0, 0.9271774, 0, 0.9414803, 0, -0.9271774, 0, 0.16348653, 20.521362, 12.620603, -18.88788)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone2" type="StaticBody3D" parent="Stones" unique_id=1833101669 instance=ExtResource("12_k6ulc")]
+transform = Transform3D(-0.6816713, -0.6330228, -0.36689088, 0.33682424, 0.17364842, -0.925417, 0.64951956, -0.7544077, 0.094846204, -2.2649655, 3.2854404, -16.475739)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
+
+[node name="PgStone (1)2" type="StaticBody3D" parent="Stones" unique_id=983487296 instance=ExtResource("12_k6ulc")]
+transform = Transform3D(-0.6816713, -0.6330228, -0.36689088, 0.33682424, 0.17364842, -0.925417, 0.64951956, -0.7544077, 0.094846204, 9.6779, 1.6067009, -12.606703)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
+
+[node name="PgStone (2)2" type="StaticBody3D" parent="Stones" unique_id=1220855408 instance=ExtResource("12_k6ulc")]
+transform = Transform3D(-0.6816713, -0.6330228, -0.36689088, 0.33682424, 0.17364842, -0.925417, 0.64951956, -0.7544077, 0.094846204, 18.894487, 6.473935, -15.624237)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
+
+[node name="PgStone (3)2" type="StaticBody3D" parent="Stones" unique_id=1547503051 instance=ExtResource("12_k6ulc")]
+transform = Transform3D(-0.6816713, -0.6330228, -0.36689088, 0.33682424, 0.17364842, -0.925417, 0.64951956, -0.7544077, 0.094846204, 23.96623, 3.3468962, -13.091811)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
+
+[node name="PgStone (4)2" type="StaticBody3D" parent="Stones" unique_id=744117446 instance=ExtResource("12_k6ulc")]
+transform = Transform3D(-0.6816713, -0.6330228, -0.36689088, 0.33682424, 0.17364842, -0.925417, 0.64951956, -0.7544077, 0.094846204, -12.058708, 1.0872059, -14.62402)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
+
+[node name="PgStone (5)2" type="StaticBody3D" parent="Stones" unique_id=435186253 instance=ExtResource("12_k6ulc")]
+transform = Transform3D(-0.6816713, -0.6330228, -0.36689088, 0.33682424, 0.17364842, -0.925417, 0.64951956, -0.7544077, 0.094846204, 3.8771021, 7.6898365, -20.612299)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
+
+[node name="PgStone (6)2" type="StaticBody3D" parent="Stones" unique_id=1629034320 instance=ExtResource("12_k6ulc")]
+transform = Transform3D(-0.6816713, -0.6330228, -0.36689088, 0.33682424, 0.17364842, -0.925417, 0.64951956, -0.7544077, 0.094846204, 7.999362, 9.833895, -20.833897)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
+
+[node name="PgStone3" type="StaticBody3D" parent="Stones" unique_id=51173764 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, -7.299324, 3.5722494, -19.930616)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (1)3" type="StaticBody3D" parent="Stones" unique_id=372933217 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 5.8983536, 2.4061947, -13.406195)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (2)3" type="StaticBody3D" parent="Stones" unique_id=1918235918 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 11.942936, 5.582427, -15.652025)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (3)3" type="StaticBody3D" parent="Stones" unique_id=318181352 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 16.144386, 11.690186, -19.350136)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (4)3" type="StaticBody3D" parent="Stones" unique_id=1138183509 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 24.911337, 10.467022, -17.541895)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (5)3" type="StaticBody3D" parent="Stones" unique_id=1402474095 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 25.499998, 14.141156, -19.00478)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (6)3" type="StaticBody3D" parent="Stones" unique_id=199146590 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 26.054426, 19.529161, -20.764578)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (7)2" type="StaticBody3D" parent="Stones" unique_id=78271989 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 28.673086, 15.994183, -18.997095)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (8)2" type="StaticBody3D" parent="Stones" unique_id=1004448459 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 29.766113, 8.392351, -15.196178)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (9)2" type="StaticBody3D" parent="Stones" unique_id=2146778829 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 27.69124, 2.3164873, -12.158243)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (10)2" type="StaticBody3D" parent="Stones" unique_id=166645870 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 25.499998, 5.488388, -13.859573)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (11)" type="StaticBody3D" parent="Stones" unique_id=1750003751 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 17.794437, 2.643011, -12.887863)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (12)" type="StaticBody3D" parent="Stones" unique_id=1677505220 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.50000024, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000024, 22.617445, 15.792979, -20.870617)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (13)" type="StaticBody3D" parent="Stones" unique_id=1439849707 instance=ExtResource("13_bm13g")]
+transform = Transform3D(-0.7660447, 0, 0.64278823, 0, 1, 0, -0.64278823, 0, -0.7660447, 17.203533, 7.961627, -16.686878)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (14)" type="StaticBody3D" parent="Stones" unique_id=280432015 instance=ExtResource("13_bm13g")]
+transform = Transform3D(-0.7660447, 0, 0.64278823, 0, 1, 0, -0.64278823, 0, -0.7660447, 22.21846, 10.6076765, -17.6298)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (15)" type="StaticBody3D" parent="Stones" unique_id=1999872321 instance=ExtResource("13_bm13g")]
+transform = Transform3D(-0.7660447, 0, 0.64278823, 0, 1, 0, -0.64278823, 0, -0.7660447, 30.34031, 18.433939, -20.216976)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (16)" type="StaticBody3D" parent="Stones" unique_id=311165606 instance=ExtResource("13_bm13g")]
+transform = Transform3D(-0.7660447, 0, 0.64278823, 0, 1, 0, -0.64278823, 0, -0.7660447, 27.573692, 9.513124, -15.756565)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (17)" type="StaticBody3D" parent="Stones" unique_id=450495823 instance=ExtResource("13_bm13g")]
+transform = Transform3D(-0.7660447, 0, 0.64278823, 0, 1, 0, -0.64278823, 0, -0.7660447, 30.11802, 4.021598, -13.010799)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (18)" type="StaticBody3D" parent="Stones" unique_id=2128539326 instance=ExtResource("13_bm13g")]
+transform = Transform3D(-0.7660447, 0, 0.64278823, 0, 1, 0, -0.64278823, 0, -0.7660447, 13.991005, 3.2909641, -13.742472)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (19)" type="StaticBody3D" parent="Stones" unique_id=1758631248 instance=ExtResource("13_bm13g")]
+transform = Transform3D(-0.7660447, 0, 0.64278823, 0, 1, 0, -0.64278823, 0, -0.7660447, 6.8261485, 3.6996708, -14.699671)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (20)" type="StaticBody3D" parent="Stones" unique_id=269714105 instance=ExtResource("13_bm13g")]
+transform = Transform3D(-1.0000007, 0, 3.9488077e-07, 0, 1, 0, -3.9488077e-07, 0, -1.0000007, 1.9018188, 6.1412773, -18.676605)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (21)" type="StaticBody3D" parent="Stones" unique_id=2073812459 instance=ExtResource("13_bm13g")]
+transform = Transform3D(0.65942776, 0, -3.739811, 0, 3.7974987, 0, 3.739811, 0, 0.65942776, -18.593258, 1.8695354, -20.347683)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (11)2" type="StaticBody3D" parent="Stones" unique_id=2032477633 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(3.5762787e-07, 0, 3.7975006, 0, 3.7974987, 0, -3.7975006, 0, 3.5762787e-07, -12.644939, 2.786539, -20.288467)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (12)2" type="StaticBody3D" parent="Stones" unique_id=177136539 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(3.5537494e-07, 0, 1.8251762, 0, 1.8251756, 0, -1.8251762, 0, 3.5537494e-07, -0.16675903, 5.9500465, -20.916748)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (13)2" type="StaticBody3D" parent="Stones" unique_id=2090192598 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(3.5356408e-07, 0, 1.8251762, 0, 1.8251756, 0, -1.8251762, 0, 3.5356408e-07, 10.500002, 9.974802, -21.85469)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (14)2" type="StaticBody3D" parent="Stones" unique_id=722456020 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(3.5356408e-07, 0, 1.8251762, 0, 1.8251756, 0, -1.8251762, 0, 3.5356408e-07, 15.5, 12.22952, -21.220387)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (15)2" type="StaticBody3D" parent="Stones" unique_id=1224504190 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(9.190281e-08, -1.556352e-14, 0.56409496, 8.517604e-08, -0.56409514, -2.9440443e-14, 0.56409544, 8.5176e-08, -9.1902734e-08, 18.608946, 10.088924, -18.206371)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (16)2" type="StaticBody3D" parent="Stones" unique_id=2029856171 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1.09273685e-07, 0, 0.564095, 7.144818e-08, -0.56409526, -3.206508e-14, 0.5640953, 2.227502e-07, -1.0927378e-07, 14.2068815, 7.570277, -17.308563)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (17)2" type="StaticBody3D" parent="Stones" unique_id=1909554086 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1.09273685e-07, 0, 0.564095, 7.144818e-08, -0.56409526, -3.206508e-14, 0.5640953, 2.227502e-07, -1.0927378e-07, 8.655092, 7.7541113, -18.754112)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (18)2" type="StaticBody3D" parent="Stones" unique_id=904794743 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1.09273685e-07, 0, 0.564095, 7.144818e-08, -0.56409526, -3.206508e-14, 0.5640953, 2.227502e-07, -1.0927378e-07, 3.8145027, 4.483465, -16.604332)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (19)2" type="StaticBody3D" parent="Stones" unique_id=1266347252 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1.09273685e-07, 0, 0.564095, 7.144818e-08, -0.56409526, -3.206508e-14, 0.5640953, 2.227502e-07, -1.0927378e-07, 2.8100889, 0.9227705, -12.153468)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (20)2" type="StaticBody3D" parent="Stones" unique_id=296546778 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1.09273685e-07, 0, 0.564095, 7.144818e-08, -0.56409526, -3.206508e-14, 0.5640953, 2.227502e-07, -1.0927378e-07, -17.337606, 0.5712967, -13.856498)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (21)2" type="StaticBody3D" parent="Stones" unique_id=1666071870 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1.09273685e-07, 0, 0.564095, 7.144818e-08, -0.56409526, -3.206508e-14, 0.5640953, 2.227502e-07, -1.0927378e-07, 24.334118, 12.225124, -18.640709)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (22)" type="StaticBody3D" parent="Stones" unique_id=805721454 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1.09273685e-07, 0, 0.564095, 7.144818e-08, -0.56409526, -3.206508e-14, 0.5640953, 2.227502e-07, -1.0927378e-07, 30.132256, 11.52393, -16.761967)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (23)" type="StaticBody3D" parent="Stones" unique_id=2035336028 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1.09273685e-07, 0, 0.564095, 7.144818e-08, -0.56409526, -3.206508e-14, 0.5640953, 2.227502e-07, -1.0927378e-07, 22.110922, 1.646307, -12.028941)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (24)" type="StaticBody3D" parent="Stones" unique_id=807069834 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1.09273685e-07, 0, 0.564095, 7.144818e-08, -0.56409526, -3.206508e-14, 0.5640953, 2.227502e-07, -1.0927378e-07, 20.842981, 3.858451, -13.411532)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (25)" type="StaticBody3D" parent="Stones" unique_id=448911202 instance=ExtResource("10_4jmrd")]
+transform = Transform3D(1.09273685e-07, 0, 0.564095, 7.144818e-08, -0.56409526, -3.206508e-14, 0.5640953, 2.227502e-07, -1.0927378e-07, 20.499998, 15.172955, -20.967865)
+script = ExtResource("11_t2aj3")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
 
 [connection signal="body_entered" from="PlayerTriggerTest/PlayerTriggerSphere" to="PlayerTriggerTest" method="test" unbinds=1]
