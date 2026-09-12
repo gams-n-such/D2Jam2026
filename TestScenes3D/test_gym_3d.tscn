@@ -3,9 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://c1o3vaktoi5tm" path="res://LevelDesign3D/Blockout/floor_3d.tscn" id="1_3tx6o"]
 [ext_resource type="Script" uid="uid://1pi61wiwf2lr" path="res://TestScenes3D/test_gym_3d.gd" id="1_hv080"]
 [ext_resource type="PackedScene" uid="uid://dsu4q0hn65f0h" path="res://LevelDesign3D/Blockout/static_box_3d.tscn" id="2_3hv1k"]
-[ext_resource type="PackedScene" uid="uid://dyh2h8fiesbc2" path="res://Player3D/floating_player_character_3d.tscn" id="3_fktsr"]
-[ext_resource type="PackedScene" uid="uid://bposkrfwo5wsd" path="res://Player3D/player_spawner_3d.tscn" id="5_6sg15"]
-[ext_resource type="PackedScene" uid="uid://dh2u7lrm15ac3" path="res://Player3D/platforming_character_3d.tscn" id="6_qyj61"]
 [ext_resource type="PackedScene" uid="uid://bc7t0l0n2v1lu" path="res://Gameplay3D/Triggers/player_trigger_sphere.tscn" id="7_4ksgo"]
 [ext_resource type="PackedScene" uid="uid://vfhedaqupk13" path="res://Gameplay3D/Labels/node_name_3d.tscn" id="8_4ksgo"]
 [ext_resource type="PackedScene" uid="uid://dv7jl7xhxqf5h" path="res://Gameplay3D/Interactions/test_interactable_3d.tscn" id="9_tphcg"]
@@ -26,6 +23,39 @@ background_mode = 2
 sky = SubResource("Sky_hv080")
 reflected_light_source = 2
 
+[sub_resource type="PrismMesh" id="PrismMesh_tp06f"]
+size = Vector3(20, 1, 5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_di6ob"]
+size = Vector3(20, 2, 5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_l8ivj"]
+size = Vector3(20, 3, 5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_7eh12"]
+size = Vector3(20, 4, 5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_dfghf"]
+size = Vector3(20, 8, 5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_4jmrd"]
+size = Vector3(20, 6, 5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_t2aj3"]
+size = Vector3(20, 10, 5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_k6ulc"]
+size = Vector3(20, 12, 5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_bm13g"]
+size = Vector3(20, 14, 5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_x4ihm"]
+size = Vector3(20, 16, 5)
+
+[sub_resource type="PrismMesh" id="PrismMesh_g3g77"]
+size = Vector3(20, 20, 5)
+
 [node name="TestGym3D" type="Node3D" unique_id=637359171]
 script = ExtResource("1_hv080")
 
@@ -40,7 +70,7 @@ environment = SubResource("Environment_6sg15")
 [node name="Floor3D" parent="BlockoutRoot" unique_id=784561339 instance=ExtResource("1_3tx6o")]
 
 [node name="StaticBox3D" parent="BlockoutRoot" unique_id=534773087 instance=ExtResource("2_3hv1k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1.5, 0)
 size = Vector3(20, 3, 1)
 
 [node name="StaticBox3D2" parent="BlockoutRoot" unique_id=524054555 instance=ExtResource("2_3hv1k")]
@@ -48,34 +78,67 @@ transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 1
 size = Vector3(20, 3, 1)
 
 [node name="StaticBox3D3" parent="BlockoutRoot" unique_id=129847680 instance=ExtResource("2_3hv1k")]
-transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, -10, 1.5, 0)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, -23, 1.5, 10)
 size = Vector3(20, 3, 1)
 
 [node name="StaticBox3D4" parent="BlockoutRoot" unique_id=1528274516 instance=ExtResource("2_3hv1k")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 1.5, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 18, 1.5, 10)
 size = Vector3(20, 3, 1)
 
-[node name="PlatformingPlayerSpawner" parent="." unique_id=3755359 instance=ExtResource("5_6sg15")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.7688355, 0, -6.1156273)
-player_scene = ExtResource("6_qyj61")
+[node name="CSGMesh3D" type="CSGMesh3D" parent="BlockoutRoot" unique_id=374066847]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0.5, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_tp06f")
 
-[node name="PlayerTriggerSphere" parent="PlatformingPlayerSpawner" unique_id=1803791410 instance=ExtResource("7_4ksgo")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 13.023965, 0)
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="BlockoutRoot" unique_id=588169027]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17, 1, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_di6ob")
 
-[node name="NodeName3D" parent="PlatformingPlayerSpawner" unique_id=1164896097 instance=ExtResource("8_4ksgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3564985, 0)
-text = "PlatformingPlayerSpawner"
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="BlockoutRoot" unique_id=2062257136]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12, 1.5, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_l8ivj")
 
-[node name="FloatingPlayerSpawner" parent="." unique_id=1411470238 instance=ExtResource("5_6sg15")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.083663, 0, -6.1156273)
-player_scene = ExtResource("3_fktsr")
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="BlockoutRoot" unique_id=2109281191]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7, 2, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_7eh12")
 
-[node name="PlayerTriggerSphere" parent="FloatingPlayerSpawner" unique_id=717506866 instance=ExtResource("7_4ksgo")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 13.023965, 0)
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="BlockoutRoot" unique_id=46203935]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 4, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_dfghf")
 
-[node name="NodeName3D" parent="FloatingPlayerSpawner" unique_id=1646948914 instance=ExtResource("8_4ksgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3564985, 0)
-text = "FloatingPlayerSpawner"
+[node name="CSGMesh3D10" type="CSGMesh3D" parent="BlockoutRoot" unique_id=1925060723]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2, 3, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_4jmrd")
+
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="BlockoutRoot" unique_id=42144670]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 5, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_t2aj3")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="BlockoutRoot" unique_id=637208838]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13, 6, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_k6ulc")
+
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="BlockoutRoot" unique_id=483972046]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18, 7, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_bm13g")
+
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="BlockoutRoot" unique_id=1308216119]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23, 8, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_x4ihm")
+
+[node name="CSGMesh3D11" type="CSGMesh3D" parent="BlockoutRoot" unique_id=1545836814]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28, 10, -21)
+use_collision = true
+mesh = SubResource("PrismMesh_g3g77")
 
 [node name="PlayerTriggerTest" parent="." unique_id=445491241 instance=ExtResource("9_tphcg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7698026, 1.752475, 19.004707)
@@ -112,6 +175,4 @@ text = "Door3D"
 [node name="PgCharacter" parent="." unique_id=250950987 instance=ExtResource("12_dfghf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3208642, 2.853115, -5.0462723)
 
-[connection signal="body_entered" from="PlatformingPlayerSpawner/PlayerTriggerSphere" to="PlatformingPlayerSpawner" method="respawn_player" unbinds=1]
-[connection signal="body_entered" from="FloatingPlayerSpawner/PlayerTriggerSphere" to="FloatingPlayerSpawner" method="respawn_player" unbinds=1]
 [connection signal="body_entered" from="PlayerTriggerTest/PlayerTriggerSphere" to="PlayerTriggerTest" method="test" unbinds=1]
