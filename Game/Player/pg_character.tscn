@@ -44,6 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("CylinderShape3D_tp06f")
 
 [node name="StickEnd" type="RigidBody3D" parent="StickCollision" unique_id=383208704]
+process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 collision_layer = 2
 physics_material_override = ExtResource("2_kddtl")
@@ -60,8 +61,14 @@ mesh = SubResource("CylinderMesh_biaub")
 [node name="StickMesh" type="MeshInstance3D" parent="StickCollision" unique_id=1094000541]
 mesh = SubResource("CylinderMesh_tp06f")
 
+[node name="StickFloorRayCast" type="RayCast3D" parent="StickCollision" unique_id=890001861]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+target_position = Vector3(0, -0.1, 0)
+hit_from_inside = true
+
 [node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=283694854]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.036714554, 0.4493587)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.036714554, 0.15846843)
 shape = SubResource("CapsuleShape3D_tp06f")
 
 [node name="BodyMesh" type="MeshInstance3D" parent="BodyCollision" unique_id=374946632]
