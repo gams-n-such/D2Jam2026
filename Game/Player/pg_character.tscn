@@ -3,6 +3,9 @@
 [ext_resource type="PhysicsMaterial" uid="uid://bub1sudm6smya" path="res://Game/Player/PHM_PlayerBody.tres" id="1_4720i"]
 [ext_resource type="Script" uid="uid://dgsag5rvae4c4" path="res://Game/Player/pg_character.gd" id="2_axqh2"]
 [ext_resource type="PhysicsMaterial" uid="uid://pkwdbk3u8h1x" path="res://Game/Player/PHM_StickEnd.tres" id="2_kddtl"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_beva2"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_up434"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_3gpkf"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tp06f"]
 radius = 0.1
@@ -28,6 +31,9 @@ radius = 0.4
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tp06f"]
 radius = 0.4
+
+[sub_resource type="Resource" id="Resource_t7efi"]
+script = ExtResource("6_3gpkf")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tp06f"]
 
@@ -75,7 +81,30 @@ shape = SubResource("CapsuleShape3D_tp06f")
 mesh = SubResource("CapsuleMesh_tp06f")
 
 [node name="Camera3D" type="Camera3D" parent="BodyCollision" unique_id=2069540689]
-transform = Transform3D(1, 0, 0, 0, 0.9219983, 0.38719392, 0, -0.38719392, 0.9219983, 0, 1.4322922, 2.356596)
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="BodyCollision/Camera3D" unique_id=129337912]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("4_beva2")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="PhantomCamera3D" type="Node3D" parent="BodyCollision" unique_id=1331924658 node_paths=PackedStringArray("follow_target", "look_at_target")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036714554, 2.8415315)
+script = ExtResource("5_up434")
+follow_mode = 6
+follow_target = NodePath("../..")
+look_at_target = NodePath("../..")
+tween_resource = SubResource("Resource_t7efi")
+follow_distance = 3.0
+spring_length = 3.0
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+align_rotation_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=603180062]
 shape = SubResource("BoxShape3D_tp06f")

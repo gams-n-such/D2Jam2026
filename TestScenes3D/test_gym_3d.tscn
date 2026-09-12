@@ -60,7 +60,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.7
 player_scene = ExtResource("6_qyj61")
 
 [node name="PlayerTriggerSphere" parent="PlatformingPlayerSpawner" unique_id=1803791410 instance=ExtResource("7_4ksgo")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 8.117794, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 13.023965, 0)
 
 [node name="NodeName3D" parent="PlatformingPlayerSpawner" unique_id=1164896097 instance=ExtResource("8_4ksgo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3564985, 0)
@@ -71,7 +71,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.08
 player_scene = ExtResource("3_fktsr")
 
 [node name="PlayerTriggerSphere" parent="FloatingPlayerSpawner" unique_id=717506866 instance=ExtResource("7_4ksgo")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 8.117794, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 13.023965, 0)
 
 [node name="NodeName3D" parent="FloatingPlayerSpawner" unique_id=1646948914 instance=ExtResource("8_4ksgo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3564985, 0)

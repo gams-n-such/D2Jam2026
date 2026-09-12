@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 @onready var stick_floor_ray_cast: RayCast3D = %StickFloorRayCast
+@onready var pcam: PhantomCamera3D = %PhantomCamera3D
 
 var _mouse_input : Vector2 = Vector2.ZERO
 
@@ -29,6 +30,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		if move.length_squared() > 0.01:
 			var impulse := global_basis * Vector3.UP * move.x * turn_sensitivity * -1.0
 			apply_torque_impulse(impulse)
+			var pcam_rotation_degrees: Vector3
+			pcam_rotation_degrees = pcam.get_third_person_rotation_degrees()
+			pcam_rotation_degrees.x -= move.y * turn_sensitivity
+			pcam_rotation_degrees.x = clampf(pcam_rotation_degrees.x, -80.0, 85.0)
+			pcam_rotation_degrees.y -= move.x * turn_sensitivity
+			pcam_rotation_degrees.y = wrapf(pcam_rotation_degrees.y, 0.0, 360.0)
+			pcam.set_third_person_rotation_degrees(pcam_rotation_degrees)
 
 @export var jump_impulse : float = 10.0
 @export var rotation_input_force : float = 25.0
