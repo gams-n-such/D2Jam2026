@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://c7hfgkxr5tlsf"]
+
+[ext_resource type="PackedScene" uid="uid://brsy8we6ltm34" path="res://Game/Player/pg_character.tscn" id="1_bw48f"]
+[ext_resource type="AudioStream" uid="uid://deh6uxwmn0jv3" path="res://Audio/Vibe Ace plus.mp3" id="1_kxj8v"]
+[ext_resource type="PackedScene" uid="uid://c1o3vaktoi5tm" path="res://LevelDesign3D/Blockout/floor_3d.tscn" id="1_slo8l"]
+[ext_resource type="PackedScene" uid="uid://vfm21c4ma5tg" path="res://Game/Level/Stones/pg_stone_3.tscn" id="3_kxj8v"]
+[ext_resource type="Script" uid="uid://cukh3ujxt50de" path="res://Game/Level/Stones/pg_stone.gd" id="4_lhrnm"]
+[ext_resource type="PackedScene" uid="uid://cs6i4lkdg3mh2" path="res://Game/Level/Stones/pg_stone_2.tscn" id="5_qylgg"]
+[ext_resource type="PackedScene" uid="uid://blrocbhrbvaym" path="res://Game/Level/Stones/pg_stone_1.tscn" id="6_vtxuq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ihuh5"]
+sky_top_color = Color(0.23538089, 0.5855123, 0.7892152, 1)
+sky_horizon_color = Color(0.56112, 0.56948954, 0.58623457, 1)
+ground_horizon_color = Color(0, 0.35418084, 0.08339094, 1)
+
+[sub_resource type="Sky" id="Sky_hv080"]
+sky_material = SubResource("ProceduralSkyMaterial_ihuh5")
+
+[sub_resource type="Environment" id="Environment_kuodp"]
+background_mode = 2
+sky = SubResource("Sky_hv080")
+reflected_light_source = 2
+
+[node name="Gameplay" type="Node3D" unique_id=1029891688]
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1879187724]
+stream = ExtResource("1_kxj8v")
+autoplay = true
+bus = &"Music"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1197386720]
+transform = Transform3D(0.70710677, -0.61237246, 0.35355335, 0, 0.49999997, 0.86602545, -0.70710677, -0.61237246, 0.35355335, 0, 12, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1352068547]
+environment = SubResource("Environment_kuodp")
+
+[node name="PgCharacter" parent="." unique_id=250950987 instance=ExtResource("1_bw48f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4039235, 2.4430776, 8.056324)
+
+[node name="Floor3D" parent="." unique_id=784561339 instance=ExtResource("1_slo8l")]
+
+[node name="Crevice" type="Node3D" parent="." unique_id=901649520]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Crevice" unique_id=1150025350]
+transform = Transform3D(0.99325776, 0, 0.11592641, 0, 1, 0, -0.11592641, 0, 0.99325776, -5.6118736, 3.5846763, -14.431961)
+use_collision = true
+size = Vector3(2.340088, 7.3837433, 30.407837)
+
+[node name="PgStone2" type="StaticBody3D" parent="Crevice/CSGBox3D" unique_id=1971995097 instance=ExtResource("3_kxj8v")]
+transform = Transform3D(-0.30860686, 0.103666656, -0.9455234, -0.87200683, 0.36623532, 0.32476193, 0.3799524, 0.9247273, -0.022628732, 1.1700435, 0.35083532, 9.994465)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (2)2" type="StaticBody3D" parent="Crevice/CSGBox3D" unique_id=1102667783 instance=ExtResource("3_kxj8v")]
+transform = Transform3D(-0.5250968, -0.51832056, -1.7098316, -1.6824771, 0.7431371, 0.2914197, 0.60120994, 1.6269581, -0.6778328, 1.1700437, -1.2754664, 14.074998)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (3)" type="StaticBody3D" parent="Crevice/CSGBox3D" unique_id=1404559965 instance=ExtResource("3_kxj8v")]
+transform = Transform3D(-0.5250969, -0.51832074, -1.7098303, -1.6824771, 0.7431366, 0.29141143, 0.60120994, 1.6269584, -0.67784005, 1.1700428, 1.7727613, -9.756624)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="PgStone (3)2" type="StaticBody3D" parent="Crevice/CSGBox3D" unique_id=1956468446 instance=ExtResource("5_qylgg")]
+transform = Transform3D(0.76722467, 2.1079342, -0.5036415, 2.1604059, -0.78632295, 0, -0.17225537, -0.4732684, -2.2432141, 1.170044, -1.0595183, 6.917943)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
+
+[node name="PgStone (4)" type="StaticBody3D" parent="Crevice/CSGBox3D" unique_id=426969230 instance=ExtResource("5_qylgg")]
+transform = Transform3D(0.76722443, 2.1079323, -0.5036411, 2.1604059, -0.78632295, 0, -0.17225555, -0.47326845, -2.243214, 1.1700447, 1.3046994, -3.704815)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
+
+[node name="PgStone (1)2" type="StaticBody3D" parent="Crevice/CSGBox3D" unique_id=845801716 instance=ExtResource("3_kxj8v")]
+transform = Transform3D(-0.36988825, 0.08918136, -2.3629215, -2.1623366, 0.9550876, 0.37453577, 0.95689815, 2.1927183, -0.06703366, 1.1700437, -1.4973989, 0.5243006)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://vfm21c4ma5tg"
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Crevice" unique_id=1063388821]
+transform = Transform3D(0.9910511, 0, -0.1334838, 0, 1, 0, 0.1334838, 0, 0.9910511, 5.0140924, 3.5846763, -14.262454)
+use_collision = true
+size = Vector3(2.001587, 7.3837433, 31.217102)
+
+[node name="PgStone" type="StaticBody3D" parent="Crevice/CSGBox3D2" unique_id=1597437036 instance=ExtResource("6_vtxuq")]
+transform = Transform3D(0.33898568, 0.011878109, 0.94071615, -0.23293455, 0.9698459, 0.07169145, -0.9114992, -0.2434276, 0.33153093, -1.0007937, -0.54419756, 13.027849)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (1)" type="StaticBody3D" parent="Crevice/CSGBox3D2" unique_id=1824215490 instance=ExtResource("6_vtxuq")]
+transform = Transform3D(0.5431119, 0.01903069, 1.5071856, -0.37320024, 1.5538565, 0.11486197, -1.460375, -0.39001194, 0.53116775, -1.0007939, -0.7179885, 7.091673)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone (2)" type="StaticBody3D" parent="Crevice/CSGBox3D2" unique_id=385218505 instance=ExtResource("6_vtxuq")]
+transform = Transform3D(-0.7727628, -0.084745996, -1.3643506, -0.36577356, 1.5229343, 0.1125762, 1.3171355, 0.3732049, -0.76920116, -1.000793, -1.260561, -7.4013557)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
+
+[node name="PgStone3" type="StaticBody3D" parent="Crevice/CSGBox3D2" unique_id=2040161017 instance=ExtResource("5_qylgg")]
+transform = Transform3D(-0.7840955, -2.1542864, 0.17292081, 2.1604059, -0.7863227, 0, 0.05914235, 0.16249238, 2.2925422, -1.0007939, -1.3373704, 0.029026985)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
+
+[node name="PgStone (1)3" type="StaticBody3D" parent="Crevice/CSGBox3D2" unique_id=120974775 instance=ExtResource("5_qylgg")]
+transform = Transform3D(-0.78409576, -2.1542864, 0.17292075, 2.1604059, -0.78632295, 0, 0.05914236, 0.16249245, 2.2925422, -1.0007932, 0.8452139, -12.355036)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
+
+[node name="PgStone (2)3" type="StaticBody3D" parent="Crevice/CSGBox3D2" unique_id=764176616 instance=ExtResource("5_qylgg")]
+transform = Transform3D(-0.78409576, -2.1542864, 0.17292075, 2.1604059, -0.78632295, 0, 0.05914236, 0.16249245, 2.2925422, -1.0007932, -2.2148309, 9.875265)
+script = ExtResource("4_lhrnm")
+metadata/asset_placer_res_id = "uid://cs6i4lkdg3mh2"
