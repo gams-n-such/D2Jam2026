@@ -98,7 +98,6 @@ func jump() -> void:
 		var jump_impulse := jump_charge * max_jump_impulse
 		var impulse := global_basis * Vector3.UP * jump_impulse
 		apply_impulse(impulse, stick_floor_shape_cast.global_position - global_position)
-		print(jump_impulse)
 	_jump_charge = 0.0
 	_jump_charging = false
 

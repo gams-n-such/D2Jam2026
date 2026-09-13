@@ -30,10 +30,6 @@ top_radius = 0.10888672
 bottom_radius = 0.10888672
 height = 0.15518188
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_tp06f"]
-top_radius = 0.08
-bottom_radius = 0.08
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tp06f"]
 height = 0.1
 radius = 0.17
@@ -42,9 +38,6 @@ radius = 0.17
 radius = 0.67626953
 height = 2.7128906
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_tp06f"]
-radius = 0.4
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_ibbhq"]
 size = Vector3(1.1741943, 1.1858826, 1.2397461)
 
@@ -52,11 +45,12 @@ size = Vector3(1.1741943, 1.1858826, 1.2397461)
 collision_layer = 2
 physics_material_override = ExtResource("1_4720i")
 center_of_mass_mode = 1
-inertia = Vector3(2, 2, 2)
+inertia = Vector3(1.5, 1.5, 1.5)
 angular_damp = 7.0
 script = ExtResource("2_axqh2")
+rotation_input_force = 40.0
 max_jump_impulse = 12.0
-jump_charge_time = 1.0
+jump_charge_time = 1.5
 jump_charge_curve = ExtResource("3_t7efi")
 hud_scene = ExtResource("4_sgcn0")
 
@@ -111,10 +105,6 @@ shape = SubResource("SphereShape3D_tp06f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.019851685, 0)
 mesh = SubResource("CylinderMesh_biaub")
 
-[node name="StickMesh" type="MeshInstance3D" parent="StickCollision" unique_id=1094000541]
-visible = false
-mesh = SubResource("CylinderMesh_tp06f")
-
 [node name="StickFloorShapeCast" type="ShapeCast3D" parent="StickCollision" unique_id=2128455732]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 0)
@@ -124,10 +114,6 @@ target_position = Vector3(0, -0.4, 0)
 [node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=283694854]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21105546, 0.41011387)
 shape = SubResource("CapsuleShape3D_tp06f")
-
-[node name="BodyMesh" type="MeshInstance3D" parent="BodyCollision" unique_id=374946632]
-visible = false
-mesh = SubResource("CapsuleMesh_tp06f")
 
 [node name="HornCollision" type="CollisionShape3D" parent="." unique_id=1527528049]
 transform = Transform3D(1, 0, 0, 0, 0.94796145, 0.31838512, 0, -0.31838512, 0.94796145, -0.05255127, 1.0524206, 1.00441)
