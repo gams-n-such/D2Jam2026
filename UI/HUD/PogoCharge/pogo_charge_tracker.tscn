@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://d0i5vme408rai"]
+
+[ext_resource type="Script" uid="uid://gedaubhr6qy7" path="res://UI/HUD/PogoCharge/pogo_charge_tracker.gd" id="1_rscho"]
+
+[sub_resource type="Gradient" id="Gradient_japyh"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5177305, 1)
+colors = PackedColorArray(0.096204735, 0.09620475, 0.096204735, 1, 0.45452422, 0.45452428, 0.45452416, 1, 0.09803922, 0.09803922, 0.09803922, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tp06f"]
+gradient = SubResource("Gradient_japyh")
+width = 16
+
+[sub_resource type="Gradient" id="Gradient_ppn1r"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_divrg"]
+gradient = SubResource("Gradient_ppn1r")
+
+[sub_resource type="Gradient" id="Gradient_rscho"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5078125, 1)
+colors = PackedColorArray(0.8288101, 2.7193873e-06, 5.7756904e-07, 1, 1, 1, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_japyh"]
+gradient = SubResource("Gradient_rscho")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[node name="PogoChargeTracker" type="Control" unique_id=939768982]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rscho")
+interp_speed = 3.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=96118196]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.6
+anchor_right = 0.85
+anchor_bottom = 0.7
+offset_bottom = -0.040008545
+color = Color(0.4045111, 0.40451115, 0.4045111, 1)
+
+[node name="Stick" type="TextureRect" parent="." unique_id=645679344]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_right = 0.7
+anchor_bottom = 1.0
+offset_left = -0.4800415
+offset_right = -0.4800415
+texture = SubResource("GradientTexture1D_tp06f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=560396611]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.1
+offset_bottom = -0.040000916
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=38165826]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.8
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_bottom = -0.040000916
+color = Color(0, 0, 0, 1)
+
+[node name="ChargeProgress" type="TextureProgressBar" parent="." unique_id=2059818270]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.1
+anchor_right = 0.6
+anchor_bottom = 0.8
+offset_left = -0.32000732
+offset_right = -0.44006348
+max_value = 1.0
+step = 0.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture1D_divrg")
+texture_progress = SubResource("GradientTexture2D_japyh")
+tint_under = Color(0, 0, 0, 0.52156866)

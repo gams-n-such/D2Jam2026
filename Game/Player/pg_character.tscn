@@ -3,8 +3,10 @@
 [ext_resource type="PhysicsMaterial" uid="uid://bub1sudm6smya" path="res://Game/Player/PHM_PlayerBody.tres" id="1_4720i"]
 [ext_resource type="Script" uid="uid://dgsag5rvae4c4" path="res://Game/Player/pg_character.gd" id="2_axqh2"]
 [ext_resource type="PhysicsMaterial" uid="uid://pkwdbk3u8h1x" path="res://Game/Player/PHM_StickEnd.tres" id="2_kddtl"]
+[ext_resource type="Curve" uid="uid://co088f1n8k8rq" path="res://Game/Player/jump_charge_curve.tres" id="3_t7efi"]
 [ext_resource type="PackedScene" uid="uid://b3a5wu3ebja6t" path="res://Game/Player/GOATPogoStick.fbx" id="3_up434"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_beva2"]
+[ext_resource type="PackedScene" uid="uid://c6uqpxfa40845" path="res://UI/HUD/hud.tscn" id="4_sgcn0"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_up434"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_3gpkf"]
 [ext_resource type="PackedScene" uid="uid://dk70vpa1bu7af" path="res://Game/Player/GOAT.fbx" id="8_3gpkf"]
@@ -53,6 +55,10 @@ center_of_mass_mode = 1
 inertia = Vector3(2, 2, 2)
 angular_damp = 7.0
 script = ExtResource("2_axqh2")
+max_jump_impulse = 12.0
+jump_charge_time = 1.0
+jump_charge_curve = ExtResource("3_t7efi")
+hud_scene = ExtResource("4_sgcn0")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." unique_id=1331924658 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
@@ -126,5 +132,3 @@ mesh = SubResource("CapsuleMesh_tp06f")
 [node name="HornCollision" type="CollisionShape3D" parent="." unique_id=1527528049]
 transform = Transform3D(1, 0, 0, 0, 0.94796145, 0.31838512, 0, -0.31838512, 0.94796145, -0.05255127, 1.0524206, 1.00441)
 shape = SubResource("BoxShape3D_ibbhq")
-
-[connection signal="body_entered" from="StickCollision/StickEnd" to="." method="_on_stick_end_body_entered"]

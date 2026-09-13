@@ -18,6 +18,12 @@ func _input(event: InputEvent) -> void:
 func toggle_mouse_cursor() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED else Input.MOUSE_MODE_VISIBLE
 
+#region Jam
+
+var player : PGCharacter = null
+
+#endregion
+
 #region Pause
 
 var _active_pause_menu : Control

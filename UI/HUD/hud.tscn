@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6uqpxfa40845"]
 
 [ext_resource type="Script" uid="uid://c5absqcct10fa" path="res://UI/HUD/hud.gd" id="1_ia7gp"]
+[ext_resource type="PackedScene" uid="uid://d0i5vme408rai" path="res://UI/HUD/PogoCharge/pogo_charge_tracker.tscn" id="2_ing8j"]
 
 [node name="HUD" type="Control" unique_id=407136769]
 layout_mode = 3
@@ -23,3 +24,10 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "HUD"
 horizontal_alignment = 1
+
+[node name="PogoChargeTracker" parent="." unique_id=939768982 instance=ExtResource("2_ing8j")]
+layout_mode = 1
+offset_left = 52.0
+offset_top = 325.0
+offset_right = -1017.0
+offset_bottom = -45.0
