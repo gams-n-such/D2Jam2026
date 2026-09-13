@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://blrocbhrbvaym"]
 
-[ext_resource type="Script" uid="uid://cukh3ujxt50de" path="res://Game/Level/Stones/pg_stone.gd" id="1_b72h4"]
+[ext_resource type="Script" uid="uid://cukh3ujxt50de" path="res://Game/Level/Stones/pg_shape.gd" id="1_b72h4"]
 [ext_resource type="ArrayMesh" uid="uid://bni3qmx5mh0ct" path="res://Game/Level/Meshes/stone_1.obj" id="2_cy1nq"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qfl43"]

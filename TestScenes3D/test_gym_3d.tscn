@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://vfm21c4ma5tg" path="res://Game/Level/Stones/pg_stone_3.tscn" id="10_4jmrd"]
 [ext_resource type="PackedScene" uid="uid://ca3h660m4iob6" path="res://Gameplay3D/Interactions/interaction_sphere.tscn" id="10_y2tcx"]
 [ext_resource type="PackedScene" uid="uid://d2l25wotvmh1x" path="res://Gameplay3D/Door/test_door_3d.tscn" id="11_7eh12"]
-[ext_resource type="Script" uid="uid://cukh3ujxt50de" path="res://Game/Level/Stones/pg_stone.gd" id="11_t2aj3"]
+[ext_resource type="Script" uid="uid://cukh3ujxt50de" path="res://Game/Level/Stones/pg_shape.gd" id="11_t2aj3"]
 [ext_resource type="PackedScene" uid="uid://brsy8we6ltm34" path="res://Game/Player/pg_character.tscn" id="12_dfghf"]
 [ext_resource type="PackedScene" uid="uid://cs6i4lkdg3mh2" path="res://Game/Level/Stones/pg_stone_2.tscn" id="12_k6ulc"]
 [ext_resource type="PackedScene" uid="uid://blrocbhrbvaym" path="res://Game/Level/Stones/pg_stone_1.tscn" id="13_bm13g"]

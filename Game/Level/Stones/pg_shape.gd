@@ -1,5 +1,5 @@
 @tool
-class_name PgStone
+class_name PgShape
 extends StaticBody3D
 
 @onready var mesh: MeshInstance3D = %Mesh
