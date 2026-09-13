@@ -27,7 +27,12 @@ horizontal_alignment = 1
 
 [node name="PogoChargeTracker" parent="." unique_id=939768982 instance=ExtResource("2_ing8j")]
 layout_mode = 1
-offset_left = 52.0
-offset_top = 325.0
-offset_right = -1017.0
-offset_bottom = -45.0
+anchors_preset = -1
+anchor_left = 0.041
+anchor_top = 0.45100003
+anchor_right = 0.19700001
+anchor_bottom = 0.93700004
+offset_left = -0.48000336
+offset_top = 0.27996826
+offset_right = -0.16001892
+offset_bottom = 0.35998535
