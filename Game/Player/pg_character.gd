@@ -32,12 +32,19 @@ func _unhandled_input(event: InputEvent) -> void:
 @export var rotation_input_force : float = 30.0
 @export var turn_force : float = 100.0
 
+@export var camera_based_rotation : bool = true
+
 func _physics_process(delta: float) -> void:
 	var input_dir := JamUtils.get_move_input_dir_2d()
 	var turn_input := Input.get_axis("turn_right", "turn_left")
 	if input_dir.length_squared() > 0.01 or turn_input != 0.0:
-		var input_torque := Vector3(input_dir.y, 0.0, -input_dir.x) * rotation_input_force + Vector3.UP * turn_force * turn_input
-		input_torque = global_basis * input_torque
+		var input_torque := Vector3.ZERO
+		if camera_based_rotation:
+			input_torque = Vector3(input_dir.y, turn_input, -input_dir.x) * rotation_input_force
+			input_torque = camera.global_basis * input_torque
+		else:
+			input_torque = Vector3(input_dir.y, 0.0, -input_dir.x) * rotation_input_force + Vector3.UP * turn_force * turn_input
+			input_torque = global_basis * input_torque
 		apply_torque(input_torque)
 
 #region Camera
@@ -46,6 +53,7 @@ func _physics_process(delta: float) -> void:
 
 @export var mouse_camera_sensitivity : float = 0.05
 @export var gamepad_camera_sensitivity : float = 1.0
+@onready var camera: Camera3D = %Camera
 
 func _process_camera(delta: float) -> void:
 	var camera_input := JamUtils.get_camera_input_dir()

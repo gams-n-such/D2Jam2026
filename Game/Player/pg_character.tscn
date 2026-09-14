@@ -18,17 +18,18 @@ script = ExtResource("6_3gpkf")
 height = 2.71875
 radius = 0.16796875
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_tp06f"]
-radius = 0.1
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sgcn0"]
+height = 0.40625
+radius = 0.18017578
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8frv"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_biaub"]
 material = SubResource("StandardMaterial3D_u8frv")
-top_radius = 0.10888672
-bottom_radius = 0.10888672
-height = 0.15518188
+top_radius = 0.1875
+bottom_radius = 0.1875
+height = 0.39501953
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tp06f"]
 height = 0.1
@@ -45,8 +46,8 @@ size = Vector3(1.1741943, 1.1858826, 1.2397461)
 collision_layer = 2
 physics_material_override = ExtResource("1_4720i")
 center_of_mass_mode = 1
-inertia = Vector3(1.5, 2.5, 1.5)
-angular_damp = 7.0
+inertia = Vector3(1.5, 2, 1.5)
+angular_damp = 8.0
 script = ExtResource("2_axqh2")
 rotation_input_force = 40.0
 turn_force = 80.0
@@ -69,12 +70,13 @@ align_position_with_view = Callable()
 align_rotation_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=2069540689]
+[node name="Camera" type="Camera3D" parent="." unique_id=2069540689]
+unique_name_in_owner = true
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 top_level = true
 
-[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=129337912]
+[node name="PhantomCameraHost" type="Node" parent="Camera" unique_id=129337912]
 process_priority = 300
 process_physics_priority = 300
 script = ExtResource("4_beva2")
@@ -92,25 +94,24 @@ transform = Transform3D(-1, 0, 8.742278e-08, 3.2013578e-08, 0.93053895, 0.366192
 
 [node name="StickEnd" type="RigidBody3D" parent="StickCollision" unique_id=383208704]
 process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1837564, 0)
 visible = false
 collision_layer = 2
 physics_material_override = ExtResource("2_kddtl")
-contact_monitor = true
 max_contacts_reported = 4
 
 [node name="StickEndCollision" type="CollisionShape3D" parent="StickCollision/StickEnd" unique_id=1984358891]
-shape = SubResource("SphereShape3D_tp06f")
+shape = SubResource("CylinderShape3D_sgcn0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StickCollision/StickEnd/StickEndCollision" unique_id=88885490]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.019851685, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0067920685, 0)
 mesh = SubResource("CylinderMesh_biaub")
 
 [node name="StickFloorShapeCast" type="ShapeCast3D" parent="StickCollision" unique_id=2128455732]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 0)
 shape = SubResource("CylinderShape3D_tp06f")
-target_position = Vector3(0, -0.4, 0)
+target_position = Vector3(0, -0.35, 0)
 
 [node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=283694854]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21105546, 0.41011387)
