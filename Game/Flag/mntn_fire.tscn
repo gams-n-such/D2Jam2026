@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dld30nfaueff7"]
+
+[ext_resource type="Script" uid="uid://btwv5nnk2ngrm" path="res://Gameplay/Effects/tag_effector.gd" id="1_gxg6q"]
+[ext_resource type="Script" uid="uid://7mf5o142v5js" path="res://Gameplay/Effects/attribute_mod_effector.gd" id="2_hhknm"]
+[ext_resource type="Script" uid="uid://befawv230b71n" path="res://Gameplay/Atributes/attribute_mod_info.gd" id="3_v4vy1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tp06f"]
+radius = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_biaub"]
+emission_enabled = true
+emission = Color(1, 0.58431375, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tp06f"]
+material = SubResource("StandardMaterial3D_biaub")
+top_radius = 0.0
+height = 1.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnveq"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 0, 0.11372549)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tp06f"]
+material = SubResource("StandardMaterial3D_nnveq")
+radius = 4.0
+height = 8.0
+
+[sub_resource type="Resource" id="Resource_tp06f"]
+script = ExtResource("3_v4vy1")
+mod_value = 100.0
+metadata/_custom_type_script = "uid://befawv230b71n"
+
+[node name="MntnFire" type="Area3D" unique_id=1247470092]
+collision_layer = 4
+collision_mask = 2
+monitorable = false
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=425099518]
+shape = SubResource("SphereShape3D_tp06f")
+
+[node name="Fire" type="MeshInstance3D" parent="." unique_id=802632556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0)
+mesh = SubResource("CylinderMesh_tp06f")
+
+[node name="Glow" type="MeshInstance3D" parent="." unique_id=752140078]
+mesh = SubResource("SphereMesh_tp06f")
+
+[node name="RestEffect" type="Node" parent="." unique_id=1447832779]
+script = ExtResource("1_gxg6q")
+tag = &"Resting"
+metadata/_custom_type_script = "uid://btwv5nnk2ngrm"
+
+[node name="StaminaRegenEffect" type="Node" parent="." unique_id=1124138677]
+script = ExtResource("2_hhknm")
+attribute_tag = 6
+mod = SubResource("Resource_tp06f")
+metadata/_custom_type_script = "uid://7mf5o142v5js"
