@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://dhsxcqdc11qea" path="res://Game/Level/Surfaces/pgs_stone.tres" id="5_vtxuq"]
 [ext_resource type="PackedScene" uid="uid://blrocbhrbvaym" path="res://Game/Level/Stones/pg_stone_1.tscn" id="6_vtxuq"]
 [ext_resource type="PackedScene" uid="uid://b3ttpugrn0y1k" path="res://Game/Level/Blockout/pg_cyl.tscn" id="7_lhrnm"]
+[ext_resource type="PackedScene" uid="uid://bpvdio21ko3wt" path="res://Game/Flag/mntn_flag_green.tscn" id="9_qylgg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ihuh5"]
 sky_top_color = Color(0.23538089, 0.5855123, 0.7892152, 1)
@@ -40,7 +41,7 @@ transform = Transform3D(0.70710677, -0.61237246, 0.35355335, 0, 0.49999997, 0.86
 environment = SubResource("Environment_kuodp")
 
 [node name="PgCharacter" parent="." unique_id=250950987 instance=ExtResource("1_bw48f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.438705, 48.40483, 13.7509)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29778862, 2.3868814, 39.884193)
 
 [node name="Floor3D" parent="." unique_id=784561339 instance=ExtResource("1_slo8l")]
 
@@ -135,31 +136,31 @@ use_collision = true
 size = Vector3(22.507813, 9.35376, 30.13086)
 
 [node name="PgStone" parent="CSGBox3D" unique_id=2143560395 instance=ExtResource("6_vtxuq")]
-transform = Transform3D(1.0776132, -2.9607167, 1.3667259, 2.5400114, 1.6647894, 1.6036996, -2.0450253, 0.5076103, 2.7120535, -6.625253, 3.8479996, 2.7510424)
+transform = Transform3D(1.0776132, -2.9607167, 1.3667259, 2.5400114, 1.6647894, 1.6036996, -2.0450253, 0.5076103, 2.7120535, -5.429248, 5.1556416, 1.5537348)
 metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
 
 [node name="PgStone (1)" parent="CSGBox3D" unique_id=193399407 instance=ExtResource("6_vtxuq")]
-transform = Transform3D(1.1746314, -3.227271, -4.405112e-08, 3.0510383, 1.1104878, 1.1193848, -1.0518781, -0.3828526, 3.2468455, 5.1163526, 3.862671, 8.94877)
+transform = Transform3D(1.1746314, -3.227271, -4.405112e-08, 3.0510383, 1.1104878, 1.1193848, -1.0518781, -0.3828526, 3.2468455, 5.1163526, 4.5611553, 5.3042955)
 metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
 
 [node name="PgStone (2)" parent="CSGBox3D" unique_id=1734833247 instance=ExtResource("6_vtxuq")]
-transform = Transform3D(1.1746314, -3.227271, 0, 2.7779398, 1.011088, 1.7480812, -1.6426597, -0.5978796, 2.9562206, 6.2759643, 3.1685658, -10.272906)
+transform = Transform3D(1.1746314, -3.227271, 0, 2.7779398, 1.011088, 1.7480812, -1.6426597, -0.5978796, 2.9562206, 4.254576, 3.1685658, -10.272908)
 metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
 
 [node name="PgStone (3)" parent="CSGBox3D" unique_id=1739082251 instance=ExtResource("6_vtxuq")]
-transform = Transform3D(1.1746314, -3.227271, 0, 2.7779398, 1.011088, 1.7480812, -1.6426597, -0.5978796, 2.9562206, -6.987371, 4.67688, -11.637909)
+transform = Transform3D(1.1746314, -3.227271, 0, 2.7779398, 1.011088, 1.7480812, -1.6426597, -0.5978796, 2.9562206, -5.8725924, 4.67688, -11.637909)
 metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
 
 [node name="PgStone (4)" parent="CSGBox3D" unique_id=1046594391 instance=ExtResource("6_vtxuq")]
-transform = Transform3D(-0.37866962, 0.11991866, 3.4113436, 2.865574, 1.8761542, 0.2521351, -1.8547606, 2.8741457, -0.30691853, 5.589396, 3.6069489, -0.61809444)
+transform = Transform3D(-0.37866962, 0.11991866, 3.4113436, 2.865574, 1.8761543, 0.25213513, -1.8547606, 2.874146, -0.30691853, 2.6813588, 3.6069489, -0.61809635)
 metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
 
 [node name="PgStone (5)" parent="CSGBox3D" unique_id=1056402246 instance=ExtResource("6_vtxuq")]
-transform = Transform3D(1.2794095e-07, -3.070583e-07, 3.43439, 2.18006, 2.6537483, 3.7770238e-07, -2.653748, 2.180061, 6.3874126e-07, -4.727638, 3.6557844, 10.275729)
+transform = Transform3D(1.17978544e-07, -3.3213394e-07, 4, 2.5390937, 3.0907934, 1.8174968e-07, -3.0907934, 2.5390937, 3.019916e-07, -4.727638, 3.6557844, 10.275729)
 metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
 
 [node name="PgStone (6)" parent="CSGBox3D" unique_id=303531748 instance=ExtResource("6_vtxuq")]
-transform = Transform3D(1.2794096e-07, -3.0705834e-07, 3.4343905, 2.9282618, 1.7945261, 1.4795754e-07, -1.7945266, 2.928263, 7.2715756e-07, -5.7040224, 3.913931, -5.1072493)
+transform = Transform3D(1.2794096e-07, -3.0705834e-07, 3.4343905, 2.9282618, 1.7945261, 1.479575e-07, -1.7945266, 2.928263, 7.271576e-07, -3.5056741, 3.913931, -5.107251)
 metadata/asset_placer_res_id = "uid://blrocbhrbvaym"
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=398053218]
@@ -292,3 +293,6 @@ size = Vector3(13.965642, 4.379616, 4.448944)
 transform = Transform3D(0.9928097, -0.11779145, -0.021310188, 0.11776433, 0.99303836, -0.0025277552, 0.021459626, 0, 0.99976957, 19.376524, 56.935276, -34.17902)
 use_collision = true
 size = Vector3(11.545137, 4.379616, 2.5088425)
+
+[node name="MntnFlag" parent="Node3D4" unique_id=987229231 instance=ExtResource("9_qylgg")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 30.666595, 61.169598, -24.370857)
