@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c7hfgkxr5tlsf"]
 
+[ext_resource type="Script" uid="uid://qoh6cd85lvkd" path="res://Game/gameplay.gd" id="1_7evhd"]
 [ext_resource type="PackedScene" uid="uid://brsy8we6ltm34" path="res://Game/Player/pg_character.tscn" id="1_bw48f"]
 [ext_resource type="AudioStream" uid="uid://deh6uxwmn0jv3" path="res://Audio/Vibe Ace plus.mp3" id="1_kxj8v"]
 [ext_resource type="PackedScene" uid="uid://c1o3vaktoi5tm" path="res://LevelDesign3D/Blockout/floor_3d.tscn" id="1_slo8l"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://blrocbhrbvaym" path="res://Game/Level/Stones/pg_stone_1.tscn" id="6_vtxuq"]
 [ext_resource type="PackedScene" uid="uid://b3ttpugrn0y1k" path="res://Game/Level/Blockout/pg_cyl.tscn" id="7_lhrnm"]
 [ext_resource type="PackedScene" uid="uid://bpvdio21ko3wt" path="res://Game/Flag/mntn_flag_green.tscn" id="9_qylgg"]
+[ext_resource type="PackedScene" uid="uid://q022o76q0rw5" path="res://Gameplay3D/Triggers/player_trigger_cube.tscn" id="10_vtxuq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ihuh5"]
 sky_top_color = Color(0.23538089, 0.5855123, 0.7892152, 1)
@@ -28,6 +30,7 @@ friction = 0.7
 bounce = 0.3
 
 [node name="Gameplay" type="Node3D" unique_id=1029891688]
+script = ExtResource("1_7evhd")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1879187724]
 process_mode = 3
@@ -42,7 +45,7 @@ transform = Transform3D(0.70710677, -0.61237246, 0.35355335, 0, 0.49999997, 0.86
 environment = SubResource("Environment_kuodp")
 
 [node name="PgCharacter" parent="." unique_id=250950987 instance=ExtResource("1_bw48f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29778862, 2.3868814, 39.884193)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05358839, 2.3868828, 41.280785)
 
 [node name="Floor3D" parent="." unique_id=784561339 instance=ExtResource("1_slo8l")]
 
@@ -296,4 +299,9 @@ use_collision = true
 size = Vector3(11.545137, 4.379616, 2.5088425)
 
 [node name="MntnFlag" parent="Node3D4" unique_id=987229231 instance=ExtResource("9_qylgg")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 30.666595, 61.169598, -24.370857)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 33.80937, 60.85242, -24.370857)
+
+[node name="PlayerTriggerCube" parent="Node3D4" unique_id=1803791410 instance=ExtResource("10_vtxuq")]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 34.34793, 69.12663, -26.307104)
+
+[connection signal="body_entered" from="Node3D4/PlayerTriggerCube" to="." method="_on_player_trigger_cube_body_entered"]
