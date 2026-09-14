@@ -30,6 +30,7 @@ bounce = 0.3
 [node name="Gameplay" type="Node3D" unique_id=1029891688]
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1879187724]
+process_mode = 3
 stream = ExtResource("1_kxj8v")
 autoplay = true
 bus = &"Music"
