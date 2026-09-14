@@ -67,7 +67,7 @@ text = "Quit"
 script = ExtResource("5_iyy2y")
 hide_in_web_build = true
 
-[node name="Label" type="Label" parent="." unique_id=1743664639]
+[node name="Title" type="Label" parent="." unique_id=1743664639]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2
@@ -80,6 +80,21 @@ theme_override_font_sizes/font_size = 96
 text = "PoGoat"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Credits" type="Label" parent="." unique_id=1807984509]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.5258789e-05
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "A game for D2Jam 2026
+Code and game design by Manlok
+Character design and mesh by amhouz
+Music: Vibe Ace  by Kevin MacLeod, CC-BY 4.0"
+vertical_alignment = 2
 
 [connection signal="pressed" from="CenterContainer/ButtonsVBox/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/ButtonsVBox/SettingsButton" to="." method="_on_settings_button_pressed"]
