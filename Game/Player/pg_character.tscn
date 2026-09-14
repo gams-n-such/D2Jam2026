@@ -58,13 +58,13 @@ hud_scene = ExtResource("4_sgcn0")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." unique_id=1331924658 node_paths=PackedStringArray("follow_target")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 script = ExtResource("5_up434")
 follow_mode = 6
 follow_target = NodePath("..")
 tween_resource = SubResource("Resource_t7efi")
-follow_distance = 5.0
-spring_length = 5.0
+follow_distance = 7.0
+spring_length = 7.0
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
 align_rotation_with_view = Callable()
@@ -73,7 +73,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 [node name="Camera" type="Camera3D" parent="." unique_id=2069540689]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera" unique_id=129337912]
