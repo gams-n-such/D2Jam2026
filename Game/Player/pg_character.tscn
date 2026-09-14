@@ -52,7 +52,7 @@ script = ExtResource("2_axqh2")
 rotation_input_force = 40.0
 turn_force = 80.0
 max_jump_impulse = 12.0
-jump_charge_time = 1.5
+jump_charge_time = 1.2
 jump_charge_curve = ExtResource("3_t7efi")
 hud_scene = ExtResource("4_sgcn0")
 
